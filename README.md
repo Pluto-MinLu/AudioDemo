@@ -28,7 +28,9 @@ allprojects {
 ##### **Step 2. Add the dependency**
 
  ```
-implementation 'com.github.Chen-Xi-g:AudioDemo:1.0.0'
+dependencies {
+       implementation 'com.github.Chen-Xi-g:AudioDemo:Tag'
+}
 ```
 
  ### 如何使用(How to use)
