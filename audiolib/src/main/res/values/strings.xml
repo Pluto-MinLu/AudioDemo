@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">audiolib</string>
+  <string name="audio_start">开始录音</string>
+  <string name="audio_stop">停止录音</string>
+</resources>
