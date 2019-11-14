@@ -29,7 +29,7 @@ allprojects {
 
  ```
 dependencies {
-       implementation 'com.github.Chen-Xi-g:AudioDemo:Tag'
+       implementation 'com.github.Chen-Xi-g:AudioDemo:v1.0.1'
 }
 ```
 
