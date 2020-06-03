@@ -140,5 +140,7 @@ MediaRecorderUtils.setMediaRecorderCallBack(new MediaRecorderUtils.MediaRecorder
  
  **小站:** www.minlukj.com
  
+ **简书:** [简书](https://www.jianshu.com/u/41def8c88ec3)
+ 
  
  
