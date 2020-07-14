@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.minlukj.audiolib.MediaRecorderUtils;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,9 +42,14 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "结束录制");
       }
 
+      @Override public void ioError(String ioError) {
+        Log.i(TAG, "发生错误" + ioError);
+      }
+
       @Override public void error(String error) {
         //错误
         Log.i(TAG, "发生错误" + error);
+        Toast.makeText(MainActivity.this, error, Toast.LENGTH_SHORT).show();
       }
 
       @Override public void process(int second) {

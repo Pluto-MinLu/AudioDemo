@@ -50,7 +50,6 @@ public class MediaRecorderUtils {
         if (mSecond * 1000 >= mMaximum) {
           mHandler.removeCallbacks(mRunnable);
           stop();
-          mSecond = 0;
         } else {
           mHandler.postDelayed(mRunnable, 1000);
           if (mMediaRecorderCallBack != null) {
@@ -155,7 +154,7 @@ public class MediaRecorderUtils {
       } catch (IOException e) {
         if (mMediaRecorderCallBack != null) {
           mMediaRecorderCallBack.stop();
-          mMediaRecorderCallBack.error(e.getMessage());
+          mMediaRecorderCallBack.ioError(e.getMessage());
         }
         //e.printStackTrace();
         isRecording = false;
@@ -177,10 +176,20 @@ public class MediaRecorderUtils {
         mHandler.removeCallbacks(mRunnable);
       }
       isRecording = false;
-      mMediaRecorder.stop();
-      mMediaRecorder.release();
-      mMediaRecorder = null;
-      mFile = null;
+      try {
+        mSecond = 0;
+        mMediaRecorder.stop();
+        mMediaRecorder.release();
+        mMediaRecorder = null;
+        mFile = null;
+      } catch (RuntimeException e) {
+        if (mMediaRecorderCallBack != null) {
+          mMediaRecorderCallBack.error("时间太短");
+        }
+      } finally {
+        mMediaRecorder = null;
+        mFile = null;
+      }
     } else {
       Log.i(TAG, "录音未开始");
     }
@@ -226,6 +235,9 @@ public class MediaRecorderUtils {
 
     void stop();//停止录制
 
+    void ioError(String ioError);
+
+    //这里提示错误
     void error(String error);
 
     //second 录制了几秒
