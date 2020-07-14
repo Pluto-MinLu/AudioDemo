@@ -1,6 +1,8 @@
 # 使用**MediaRecorder**进行音频录制
 [![](https://jitpack.io/v/Chen-Xi-g/AudioDemo.svg)](https://jitpack.io/#Chen-Xi-g/AudioDemo)
 
+>简书地址：https://www.jianshu.com/p/2bf8fb720d81
+
 ### 手动停止录音，显示分贝和录音时长。
 ![显示时长和分贝，点击停止](https://github.com/Chen-Xi-g/AudioDemo/blob/master/audio1.gif)
 
@@ -29,7 +31,7 @@ allprojects {
 
  ```
 dependencies {
-       implementation 'com.github.Chen-Xi-g:AudioDemo:v1.0.1'
+       implementation 'com.github.Chen-Xi-g:AudioDemo:v1.0.3'
 }
 ```
 
@@ -139,6 +141,8 @@ MediaRecorderUtils.setMediaRecorderCallBack(new MediaRecorderUtils.MediaRecorder
  **邮箱(Email):** a912816369@gmail.com
  
  **小站:** www.minlukj.com
+ 
+ **简书:** https://www.jianshu.com/u/41def8c88ec3
  
  
  
