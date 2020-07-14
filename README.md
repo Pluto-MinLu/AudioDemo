@@ -83,6 +83,11 @@ MediaRecorderUtils.setMediaRecorderCallBack(new MediaRecorderUtils.MediaRecorder
         Log.i(TAG, "结束录制");
       }
 
+      @Override public void ioError(String ioError) {
+        //错误
+        Log.i(TAG, "发生错误" + ioError);
+      }
+
       @Override public void error(String error) {
         //错误
         Log.i(TAG, "发生错误" + error);
@@ -104,45 +109,3 @@ MediaRecorderUtils.setMediaRecorderCallBack(new MediaRecorderUtils.MediaRecorder
 ```java
   /**
    *如果你需要自定义录制文件保存的路径请下载lib中的MediaRecorderUtils代码。
-   * 在MediaRecorderUtils的方法getExternalDir()里去设置自己的文件路径。
-   */
-  private String getExternalDir() {
-    // 在这里修改你的路径
-    String path = Environment.getExternalStorageDirectory().getPath() + "/" + mContext.getPackageName() + "/recorder";
-    //...
-  }
- /**
-  *如果你需要额外的录制回调，你可以在MediaRecorderCallBack中添加。
-  */
-  public interface MediaRecorderCallBack {
-      void start();//开始录制
-
-      void stop();//停止录制
-
-      void error(String error);
-
-      //second 录制了几秒
-      void process(int second);//录制中
-
-      void decibel(int decibel);//分贝大小
-  }
-```
-
-### 具体代码可以看Demo中示例
-
- ### 如果你感觉对你有用的话请点一下Star吧，而且你还可以打赏一波(If you feel useful to you, please click Star, or you can reward it.)
- 
- <img src="http://r.photo.store.qq.com/psb?/V12LSg7n0Vj1Fg/JIE.r7vzYd0JdQV4.U8AFDF2wy5d*DXixdQZ2ZFiV6I!/r/dEYBAAAAAAAA" height = "400" width = "300">      <img src="http://r.photo.store.qq.com/psb?/V12LSg7n0Vj1Fg/64q8qbMEanfoAXbFWxrESl6QXS7ITX63kCabiSRL440!/r/dLYAAAAAAAAA" height = "400" width = "300">
- 
- ### 如何联系我(How to contact me)
- 
- **QQ:** 1217056667
- 
- **邮箱(Email):** a912816369@gmail.com
- 
- **小站:** www.minlukj.com
- 
- **简书:** https://www.jianshu.com/u/41def8c88ec3
- 
- 
- 
