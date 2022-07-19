@@ -1,4 +1,4 @@
-# 使用**MediaRecorder**进行音频录制
+# （停止维护）使用**MediaRecorder**进行音频录制
 [![](https://jitpack.io/v/Chen-Xi-g/AudioDemo.svg)](https://jitpack.io/#Chen-Xi-g/AudioDemo)
 
 >简书地址：https://www.jianshu.com/p/2bf8fb720d81
